@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="home.css">
+    <title>My Portfolio</title>
+    <style>
+        .slideshow-container {
+    width: 100%; 
+    height: 400px; 
+    position: relative;
+    overflow: hidden; 
+    background-color: whitesmoke;
+}
+
+.slideshow-wrapper {
+    display: flex;
+    width: calc(400px * 10); 
+    animation: slide 25s linear infinite; 
+}
+
+.slideshow-container img {
+    width: 400px; 
+    height: 400px; 
+    object-fit: cover;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-2000px); 
+    }
+}
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to My Portfolio</h1>
+    </header>
+
+    <nav>
+        <a href="about.html" target="_blank">About Me</a>
+        <a href="project.html">Projects</a>
+        <a href="skills.html">Skills</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <img src="ap.jpg" alt="Profile Picture" style="max-width: 200px; border-radius: 50%;">
+        <p > Hello! My name is <b>Ankita Pawar</b>, and I am currently a <f style="color: green; font-size: 110%;">Data Structures and Algorithms (DSA) trainer</f> at Faceprep. 
+            Over the past year, I have had the privilege of guiding numerous students through their placement journeys, helping them secure positions in competitive companies.
+            In my role, I focus on delivering comprehensive training programs that cover a range of topics essential for technical interviews. 
+            I specialize in <i>data structures and algorithms</i>, ensuring that my students not only understand the concepts but can also apply them effectively in real-world scenarios. 
+            I have also conducted numerous workshops and training sessions tailored to specific companies, providing students with insights into the unique expectations and interview processes of potential employers.
+
+My technical expertise extends beyond DSA. I am proficient in <f style="color: green;">Java programming</f>, which I often use as a foundation for teaching algorithmic concepts. 
+Additionally, I have a solid understanding of <f style="color: green;">blockchain technology and cloud computing</f>, allowing me to introduce students to cutting-edge topics that are increasingly relevant in today’s tech landscape.
+
+I am passionate about empowering students with the knowledge and confidence they need to excel in their careers. My approach emphasizes practical application, problem-solving skills, and a deep understanding of technical concepts, ensuring that my students are well-prepared for their future endeavors.
+
+        </p>
+    </section>
+
+    <section id="education">
+        <h2>Educational Background</h2>
+        <p>Here are my academic qualifications:</p>
+        <ul>
+            <li><strong>Master's Degree in Computer Science (pursuing)</strong> - shri vithal education & research institute, pandharpur
+                </li>
+            <li><strong>Bachelor's Degree in Information Technology</strong> - Dr. Babasaheb Ambedkar University, Graduated in 2023</li><br>
+            <li><strong>Certifications:</strong>
+                <ul >
+                    <li>Java and pythong full stack development and testing- Kodnest <a href="KOD00BFQH-Ankita.pdf" target="_blank">See the Certificate</a></li>
+                    <li>Azure 304 for Beginners Course - SkillUp<a href="Azure 304 certificate.pdf" target="_blank">See the Certificate</a></li>
+                    <li>Developer and Technology Job Simulation - Accenture<a href="accenture.pdf" target="_blank">See the Certificate</a></li>
+                    <li>Software Engineering Job Simulation - JP Morgan<a href="JP Morgan.pdf" target="_blank">See the Certificate</a></li>
+                    <li>Java Programming - Great Learning<a href="Java cert.pdf" target="_blank">See the Certificate</a></li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    
+    <section id="slideshow">
+        <h2>Gallery</h2>
+        <div class="slideshow-container">
+            <div class="slideshow-wrapper">
+                <img src="pic1.jpg" alt="Pic 1">
+                <img src="pic2.jpg" alt="Pic 2">
+                <img src="pic3.jpg" alt="Pic 3">
+                <img src="pic4.jpg" alt="Pic 4">
+                <img src="pic5.jpg" alt="Pic 5">
+                <img src="pic1.jpg" alt="Pic 1">
+                <img src="pic2.jpg" alt="Pic 2">
+                <img src="pic3.jpg" alt="Pic 3">
+                <img src="pic4.jpg" alt="Pic 4">
+                <img src="pic5.jpg" alt="Pic 5">
+            </div>
+        </div>
+    </section>
+    
+
+    <footer>
+        &copy; 2024 Ankita Pawar | All Rights Reserved
+    </footer>
+
+</body>
+</html>

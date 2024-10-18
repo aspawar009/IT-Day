@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Contact - My Portfolio</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #4a90e2, #b2d8e9);
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        header {
+            background-color: rgba(74, 144, 226, 0.9);
+            color: white;
+            text-align: center;
+            padding: 1.5em 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.8em;
+            letter-spacing: 2px;
+        }
+
+        section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 40px 20px;
+            background-color: white;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            width: 50%;
+            margin: 40px auto;
+            animation: fadeInForm 2s ease-in-out;
+        }
+
+        @keyframes fadeInForm {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        section p {
+            font-size: 1.3em;
+            margin-bottom: 25px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 500px;
+            margin: auto;
+        }
+
+        label {
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #4a90e2;
+        }
+
+        input[type="text"], input[type="email"], textarea {
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+            border-color: #4a90e2;
+            outline: none;
+            box-shadow: 0 0 8px rgba(74, 144, 226, 0.5);
+        }
+
+        textarea {
+            resize: none;
+            height: 120px;
+        }
+
+        button {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            background-color: #357ab7;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-details {
+            margin-top: 40px;
+        }
+
+        .contact-details strong {
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        .contact-details a {
+            color: #4a90e2;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-details a:hover {
+            text-decoration: underline;
+        }
+
+        a.back-link {
+            margin-top: 30px;
+            display: inline-block;
+            color: #4a90e2;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a.back-link:hover {
+            color:blue;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #4a90e2;
+            color: white;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Contact Me</h1>
+    </header>
+
+    <section>
+        <p>If you would like to get in touch, please fill out the form below:</p>
+
+        <!-- Contact Form -->
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" placeholder="Your Message" rows="4" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <div class="contact-details">
+            <p>If you would like to get in touch, you can reach me through the following:</p>
+            <strong>Email:</strong> <a href="mailto:aspawar009@gmail.com">aspawar009@gmail.com</a><br>
+            <strong>LinkedIn: </strong><a href="https://www.linkedin.com/in/ankita-pawar09/" target="_blank">Visit my LinkedIn Profile</a><br>
+            <strong>Phone:</strong> <a href="tel:+919665191315">+91 96651 91315</a>
+        </div>
+
+        <a class="back-link" href="index.html">Back to Home</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Ankita Pawar | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
