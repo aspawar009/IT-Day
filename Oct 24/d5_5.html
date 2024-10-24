@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Manipulation</title>
+</head>
+<body>
+
+  <ul id="itemList"></ul>
+
+  <script>
+    // 1. Dynamic Content Updates
+    const newItem = document.createElement("li");
+    newItem.textContent = "New Item";
+    document.getElementById("itemList").appendChild(newItem);
+
+    // 2. Style Manipulation
+    newItem.style.color = "green";
+    
+    // 3. Form Manipulation
+    const inputField = document.createElement("input");
+    inputField.value = "Enter text";
+    document.body.appendChild(inputField);
+  </script>
+</body>
+</html>

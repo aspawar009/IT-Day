@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Handling</title>
+</head>
+<body>
+
+  <form id="myForm">
+    <input type="email" id="email" placeholder="Enter email">
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    // 1. Accessing Form Value
+    const emailInput = document.getElementById("email");
+    console.log(emailInput.value);  // Output: (Current value of input)
+
+    // 2. Form Submission
+    const form = document.getElementById("myForm");
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      alert("Form submitted with email: " + emailInput.value);
+    });
+
+    // 3. Form Validation
+    form.addEventListener('submit', function(event) {
+      if (!emailInput.value.includes("@")) {
+        alert("Invalid email");
+        event.preventDefault();  // Prevent form submission
+      }
+    });
+  </script>
+</body>
+</html>

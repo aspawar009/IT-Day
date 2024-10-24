@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Handling</title>
+</head>
+<body>
+
+  <button id="clickButton">Click Me!</button>
+  <p id="hoverParagraph">Hover over me!</p>
+  <input type="text" id="keyInput" placeholder="Type something">
+
+  <script>
+    // 1. Click Event
+    document.getElementById("clickButton").addEventListener('click', function() {
+      alert("Button clicked!");
+    });
+
+    // 2. Mouseover Event
+    document.getElementById("hoverParagraph").addEventListener('mouseover', function() {
+      this.style.color = "blue";
+    });
+
+    // 3. Keydown Event
+    document.getElementById("keyInput").addEventListener('keydown', function(event) {
+      console.log("Key pressed: " + event.key);
+    });
+  </script>
+</body>
+</html>

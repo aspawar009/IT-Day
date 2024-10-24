@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Traversal</title>
+</head>
+<body>
+
+  <ul id="list">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+
+  <script>
+    const list = document.getElementById("list");
+
+    // 1. Parent Node
+    console.log(list.parentNode.tagName);  // Output: BODY
+
+    // 2. Child Nodes
+    console.log(list.childNodes);  // Output: NodeList(6) [text, li, text, li, text, li]
+
+    // 3. Sibling Nodes
+    const secondItem = list.children[1];
+    console.log(secondItem.nextSibling);  // Output: #text (next sibling is the text node)
+  </script>
+</body>
+</html>

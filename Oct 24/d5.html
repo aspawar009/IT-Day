@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Accessing Elements</title>
+</head>
+<body>
+
+  <h1 id="header">Hello, World!</h1>
+  <div class="active">First Active Element</div>
+  <div class="active">Second Active Element</div>
+  <ul class="menu">
+    <li>Item 1</li>
+    <li>Item 2</li>
+  </ul>
+
+  <script>
+    // 1. Accessing by ID
+    const header = document.getElementById("header");
+    console.log(header.textContent); // Output: Hello, World!
+
+    // 2. Accessing by Class Name
+    const activeElements = document.getElementsByClassName("active");
+    console.log(activeElements.length); // Output: 2
+
+    // 3. Accessing by Query Selector (CSS Selector)
+    const firstMenuItem = document.querySelector(".menu li");
+    console.log(firstMenuItem.textContent); // Output: Item 1
+  </script>
+</body>
+</html>

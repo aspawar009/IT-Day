@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Modifying Elements</title>
+</head>
+<body>
+
+  <h1 id="header">Hello, World!</h1>
+  <img id="myImage" src="default.jpg" alt="Default Image">
+
+  <script>
+    // 1. Modifying Content (innerHTML)
+    document.getElementById("header").innerHTML = "Welcome to the DOM!";
+    
+    // 2. Modifying Attributes (setAttribute)
+    const img = document.getElementById("myImage");
+    img.setAttribute("src", "newImage.jpg");
+
+    // 3. Modifying Classes
+    img.classList.add("highlight");
+    console.log(img.classList.contains("highlight")); // Output: true
+  </script>
+</body>
+</html>
