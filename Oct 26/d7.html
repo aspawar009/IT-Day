@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AJAX Practive</title>
+</head>
+<body>
+  <h1>AJAX All-in-One Examples</h1>
+
+  <!-- Buttons for triggering different AJAX examples -->
+  <button onclick="example1_loadText()">Load Text (GET)</button>
+  <div id="example1-content"></div>
+  
+  <button onclick="example2_sendData()">Send Data (POST)</button>
+  <div id="example2-content"></div>
+  
+  <button onclick="example3_updatePage()">Update Page with JSON</button>
+  <div id="example3-content"></div>
+
+  <!-- Section for XMLHttpRequest handling examples -->
+  <button onclick="example4_ajaxReadyStates()">Check AJAX Ready States</button>
+  <div id="example4-content"></div>
+  
+  <button onclick="example5_checkStatus()">Check Status and Response</button>
+  <div id="example5-content"></div>
+  
+  <button onclick="example6_handleJSON()">Handle JSON Response</button>
+  <div id="example6-content"></div>
+
+  <!-- Fetch API examples -->
+  <button onclick="example7_fetchText()">Fetch API (GET)</button>
+  <div id="example7-content"></div>
+  
+  <button onclick="example8_fetchPost()">Fetch API (POST)</button>
+  <div id="example8-content"></div>
+  
+  <button onclick="example9_fetchJSON()">Fetch JSON and Display</button>
+  <div id="example9-content"></div>
+
+  <!-- Script Section for All AJAX Code Examples -->
+  <script>
+    // Example 1: Basic AJAX Text Load with GET
+    function example1_loadText() {
+      let xhr = new XMLHttpRequest();
+      xhr.open("GET", "example.txt", true);
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          document.getElementById("example1-content").innerText = xhr.responseText;
+        }
+      };
+      xhr.send();
+    }
+
+    // Example 2: AJAX Send Data with POST
+    function example2_sendData() {
+      let xhr = new XMLHttpRequest();
+      xhr.open("POST", "submit_data.php", true);
+      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          document.getElementById("example2-content").innerText = "Data submitted successfully!";
+        }
+      };
+      xhr.send("name=John&age=30");
+    }
+
+    // Example 3: Update Page with JSON Data
+    function example3_updatePage() {
+      let xhr = new XMLHttpRequest();
+      xhr.open("GET", "data.json", true);
+      xhr.onload = function () {
+        if (xhr.status === 200) {
+          const data = JSON.parse(xhr.responseText);
+          document.getElementById("example3-content").innerText = `Name: ${data.name}, Age: ${data.age}`;
+        }
+      };
+      xhr.send();
+    }
+
+    // Example 4: AJAX Ready States Demo
+    function example4_ajaxReadyStates() {
+      let xhr = new XMLHttpRequest();
+      xhr.open("GET", "example.txt", true);
+      xhr.onreadystatechange = function () {
+        document.getElementById("example4-content").innerText += `ReadyState: ${xhr.readyState}\n`;
+      };
+      xhr.send();
+    }
+
+    // Example 5: AJAX Status and Response Check
+    function example5_checkStatus() {
+      let xhr = new XMLHttpRequest();
+      xhr.open("GET", "nonexistentfile.txt", true); // Intentional error for testing
+      xhr.onload = function () {
+        document.getElementById("example5-content").innerText = xhr.status === 200
+          ? xhr.responseText
+          : `Error ${xhr.status}: File not found`;
+      };
+      xhr.send();
+    }
+
+    // Example 6: Handling JSON Response
+    function example6_handleJSON() {
+      let xhr = new XMLHttpRequest();
+      xhr.open("GET", "data.json", true);
+      xhr.onload = function () {
+        if (xhr.status === 200) {
+          const jsonData = JSON.parse(xhr.responseText);
+          document.getElementById("example6-content").innerText = JSON.stringify(jsonData, null, 2);
+        }
+      };
+      xhr.send();
+    }
+
+    // Example 7: Fetch API GET Request
+    function example7_fetchText() {
+      fetch("example.txt")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("example7-content").innerText = data;
+        })
+        .catch(error => console.error("Error:", error));
+    }
+
+    // Example 8: Fetch API POST Request
+    function example8_fetchPost() {
+      fetch("submit_data.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: "name=John&age=30"
+      })
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("example8-content").innerText = "Data submitted successfully!";
+      })
+      .catch(error => console.error("Error:", error));
+    }
+
+    // Example 9: Fetch JSON and Display Data
+    function example9_fetchJSON() {
+      fetch("data.json")
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById("example9-content").innerText = `Name: ${data.name}, Age: ${data.age}`;
+        })
+        .catch(error => console.error("Error:", error));
+    }
+  </script>
+</body>
+</html>
